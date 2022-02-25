@@ -31,7 +31,7 @@
         <th>Author</th>
         <th>Title</th>
       </tr>
-      <tr *ngFor="let poem of favoritePoem; trackBy: trackByFn">
+      <tr *ngFor="let poem of favoritePoem; trackBy: trackByFn" (click)="selectPoem(poem)">
         <td>{{poem.author}}</td>
         <td>{{poem.title}}</td>
       </tr>

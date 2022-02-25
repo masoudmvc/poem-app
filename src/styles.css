@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+/* global styles */
 
 /* body {
   background-color: #333;
@@ -17,3 +17,7 @@ p {
   color: #1a0dab;
   cursor: pointer;
 } */
+
+.multi_lines_text {
+  white-space: pre-line;
+}

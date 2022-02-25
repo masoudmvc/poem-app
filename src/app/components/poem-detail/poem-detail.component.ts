@@ -4,6 +4,7 @@ import { Poem } from 'src/app/shared/models/poem.model';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
+import { PoemService } from 'src/app/shared/business-services/poem.service';
 
 @Component({
   selector: 'app-poem-detail',
@@ -16,6 +17,7 @@ export class PoemDetailComponent implements OnInit, OnDestroy {
   private ngUnSubscribe = new Subject();
 
   constructor(
+    private poenService: PoemService,
     private poemInteractionService: PoemIteractionService,
     private router: Router) { }
 
@@ -25,14 +27,25 @@ export class PoemDetailComponent implements OnInit, OnDestroy {
 
   getPoem() {
     this.poemInteractionService.getSelectedPoem().pipe(takeUntil(this.ngUnSubscribe))
-            .subscribe(poem => {
-                if (poem) {
-                  this.poem = poem;
-                  console.log(this.poem);
-                } else {
-                  this.router.navigate(['/']);
-                }
-            });
+        .subscribe(poem => {
+            if (poem) {
+              this.poem = poem;
+              console.log(this.poem);
+            } else {
+              this.router.navigate(['/']);
+            }
+        });
+  }
+
+  back() {
+    this.router.navigate(['/list']);
+  }
+
+  addToFavorite() {
+    if(this.poem)
+      this.poem.isFavorite = !this.poem.isFavorite;
+
+      this.poenService.changePoemFavoriteStatus(this.poem as Poem)
   }
 
   ngOnDestroy() {

@@ -16,4 +16,10 @@ export class PoemService {
     return this._poems
   }
 
+  public changePoemFavoriteStatus(poem: Poem) {
+    this._poems.forEach(x => {
+      if(x.author === poem.author && x.title === poem.title)
+        x.isFavorite = poem.isFavorite;
+    });
+  }
 }
