@@ -28,6 +28,7 @@ export class PoemDetailComponent implements OnInit, OnDestroy {
             .subscribe(poem => {
                 if (poem) {
                   this.poem = poem;
+                  console.log(this.poem);
                 } else {
                   this.router.navigate(['/']);
                 }

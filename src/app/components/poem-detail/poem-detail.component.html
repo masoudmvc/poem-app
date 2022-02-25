@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-12">
-    <!-- <p>{{poem.title}}</p>
-    <p>{{}}</p> -->
+    <p><strong>Title</strong>: {{poem?.title}}</p>
+    <p><strong>Author</strong>: {{poem?.author}}</p>
+    <p [innerHTML]="poem?.lines | linestring" class="multi_lines_text"></p>
   </div>
 </div>
