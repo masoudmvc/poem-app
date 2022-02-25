@@ -1,0 +1,26 @@
+.header-firt-box {
+  height: 33px;
+  background-color: #000000;
+  /* background-image:linear-gradient(to right,#000000, #272727); */
+}
+
+.header-second-box {
+  /* background-color: #232323; */
+  height: 85px;
+  background-color: #272727;
+}
+
+.mf-body {
+  /* height: 500px; */
+  /* background-color: rgb(226, 226, 226); */
+  background-color: #fafafa;
+}
+
+.mf-footer {
+  height: 120px;
+  background-color: #272727;
+}
+
+.jutForContentNotAlignCenter {
+  align-items: unset;
+}
