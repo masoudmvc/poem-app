@@ -1,7 +1,21 @@
-<p>home works!</p>
-<div class="row">
-  <div class="col-md 6">
-    <button class="btn btn-primary" (click)="fetchPoems()">Fetch poems</button>
+<div class="row body-color desc-box">
+  <div class="col-12 text-center">
+    <h3 class="home-title">Frontend Assignment</h3>
+    <p class="desc">This is a frontend assignment with Angular framework & bootstrap together with
+      <a class="desc" href="https://poetrydb.org/index.html"> the poetrydb</a> API.</p>
+    <p class="desc">Candidate: Masoud Ghaffari  -  Email: masoud.ghaffari.1980@gmail.com</p>
+    <p class="desc">Click the button blow to fetch 20 random poems and start...</p>
   </div>
-  <div class="col-md 6">Fahameh</div>
+</div>
+
+<div class="row body-color">
+  <div class="col-12 text-center" *ngIf="loadingTofetch">
+    <button class="btn btn-primary btn-lg start-button" disabled>
+      <span class="spinner-border spinner-border-lg"></span>
+      <span class="sr-only"> Fetch poems</span>
+    </button>
+  </div>
+  <div class="col-12 text-center" *ngIf="!loadingTofetch">
+    <button class="btn btn-primary btn-lg start-button" (click)="fetchPoems()">Fetch poems</button>
+  </div>
 </div>

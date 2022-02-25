@@ -1,8 +1,13 @@
 /* global styles */
 
-/* body {
+body {
   background-color: #333;
-} */
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.body-color {
+  background-color: #333;
+}
 
 /* .row {
   margin: 0;
@@ -21,3 +26,9 @@ p {
 .multi_lines_text {
   white-space: pre-line;
 }
+
+/* .content-back-color {
+  background-color: #51514b;
+  color: #f8f5f8;
+  title-color: #3cf
+} */

@@ -1,0 +1,23 @@
+.desc-box {
+  padding: 100px 0 30px 0;
+}
+
+.start-button {
+  width: 300px;
+  height: 80px;
+  font-size: 32px;
+  font-weight: 600;
+  background-color: brown;
+  border: none;
+}
+
+.home-title {
+  color: #3cf;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.desc {
+  color: #f8f5f8;
+  margin-top: 20px;
+}
