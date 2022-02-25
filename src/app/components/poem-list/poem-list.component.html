@@ -1,7 +1,7 @@
-<div class="row">
-  <div class="col-12">
+<div class="row body-color">
+  <div class="col-12 tools-box">
     <div class="dropdown">
-      <button (click)="showDropdown()" class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      <button (click)="showDropdown()" class="btn btn-sm btn-secondary dropdown-toggle sort-btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
         Order by
       </button>
       <ul class="dropdown-menu" [ngClass]="{'show': toggleFlag}" aria-labelledby="dropdownMenuButton1">
@@ -12,29 +12,40 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-6">
-    <table class="table table-bordered">
-      <tr>
-        <th>Author</th>
-        <th>Title</th>
-      </tr>
-      <tr *ngFor="let poem of poemsWithoutFavorite; trackBy: trackByFn" (click)="selectPoem(poem)">
-        <td>{{poem.author}}</td>
-        <td>{{poem.title}}</td>
-      </tr>
+<div class="row clh-box">
+  <div class="col-md-6">
+    <p class="favorite-text"><strong>All poems</strong></p>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th style="text-align:center">Author</th>
+          <th style="text-align:center">Title</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let poem of poemsWithoutFavorite; trackBy: trackByFn" (click)="selectPoem(poem)">
+          <td>{{poem.author}}</td>
+          <td>{{poem.title}}</td>
+        </tr>
+      </tbody>
     </table>
   </div>
-  <div class="col-6">
-    <table class="table table-bordered">
-      <tr>
-        <th>Author</th>
-        <th>Title</th>
-      </tr>
-      <tr *ngFor="let poem of favoritePoem; trackBy: trackByFn" (click)="selectPoem(poem)">
-        <td>{{poem.author}}</td>
-        <td>{{poem.title}}</td>
-      </tr>
+  <div class="col-md-1 body-color"></div>
+  <div class="col-md-5">
+    <p class="favorite-text"><strong>Your favorite poems</strong></p>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th style="text-align:center">Author</th>
+          <th style="text-align:center">Title</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let poem of favoritePoem; trackBy: trackByFn" (click)="selectPoem(poem)">
+          <td>{{poem.author}}</td>
+          <td>{{poem.title}}</td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </div>
