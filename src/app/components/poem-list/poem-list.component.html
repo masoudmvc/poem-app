@@ -1,1 +1,40 @@
-<p>poem-list works!</p>
+<div class="row">
+  <div class="col-12">
+    <div class="dropdown">
+      <button (click)="showDropdown()" class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Order by
+      </button>
+      <ul class="dropdown-menu" [ngClass]="{'show': toggleFlag}" aria-labelledby="dropdownMenuButton1">
+        <li><label class="dropdown-item" (click)="orderBy('title')">Title</label></li>
+        <li><label class="dropdown-item" (click)="orderBy('author')">Author</label></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-6">
+    <table class="table table-bordered">
+      <tr>
+        <th>Author</th>
+        <th>Title</th>
+      </tr>
+      <tr *ngFor="let poem of poemsWithoutFavorite; trackBy: trackByFn" (click)="selectPoem(poem)">
+        <td>{{poem.author}}</td>
+        <td>{{poem.title}}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-6">
+    <table class="table table-bordered">
+      <tr>
+        <th>Author</th>
+        <th>Title</th>
+      </tr>
+      <tr *ngFor="let poem of favoritePoem; trackBy: trackByFn">
+        <td>{{poem.author}}</td>
+        <td>{{poem.title}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

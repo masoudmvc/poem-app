@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PoetryDbAPIService } from 'src/app/shared/api-services/poetrydb.service';
 import { PoemService } from 'src/app/shared/business-services/poem.service';
 
@@ -11,14 +12,18 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private poetryApiService: PoetryDbAPIService,
-    private poenService: PoemService) { }
+    private poenService: PoemService,
+    private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  fetchPoems() {
     this.poetryApiService.FetchRandomPoems(20).subscribe(res => {
       this.poenService.list = res;
-      console.log(this.poenService.list);
+      this.router.navigate(['/list']/*, {relativeTo: this.route}*/);
     }, err => {
       console.log(err);
+      alert('error fetching data!');
     })
   }
 
