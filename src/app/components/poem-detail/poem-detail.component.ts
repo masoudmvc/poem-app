@@ -15,6 +15,7 @@ export class PoemDetailComponent implements OnInit, OnDestroy {
 
   poem: Poem | null = null;
   private ngUnSubscribe = new Subject();
+  isFavorite?: boolean = false;
 
   constructor(
     private poenService: PoemService,
@@ -30,6 +31,7 @@ export class PoemDetailComponent implements OnInit, OnDestroy {
         .subscribe(poem => {
             if (poem) {
               this.poem = poem;
+              this.isFavorite = poem.isFavorite;
               console.log(this.poem);
             } else {
               this.router.navigate(['/']);
@@ -46,6 +48,7 @@ export class PoemDetailComponent implements OnInit, OnDestroy {
       this.poem.isFavorite = !this.poem.isFavorite;
 
       this.poenService.changePoemFavoriteStatus(this.poem as Poem)
+      this.isFavorite = !this.isFavorite;
   }
 
   ngOnDestroy() {

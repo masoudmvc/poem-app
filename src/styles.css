@@ -9,26 +9,10 @@ body {
   background-color: #333;
 }
 
-/* .row {
-  margin: 0;
+.clh-box {
+  background-color: #f1efe2;
 }
-
-p {
-  padding: 0;
-  margin: 0;
-} */
-
-/* .custom-link {
-  color: #1a0dab;
-  cursor: pointer;
-} */
 
 .multi_lines_text {
   white-space: pre-line;
 }
-
-/* .content-back-color {
-  background-color: #51514b;
-  color: #f8f5f8;
-  title-color: #3cf
-} */

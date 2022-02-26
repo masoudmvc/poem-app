@@ -1,14 +1,16 @@
-<div class="row">
-  <div class="col-12">
-    <p><strong>Title</strong>: {{poem?.title}}</p>
-    <p><strong>Author</strong>: {{poem?.author}}</p>
-    <button (click)="addToFavorite()">Add to favorite</button>
-    <button (click)="back()">Back</button>
+<div class="row body-color">
+  <div class="col-12 tools-box">
+    <p class="font-header"><strong>Title</strong>: {{poem?.title}}</p>
+    <p class="font-header"><strong>Author</strong>: {{poem?.author}}</p>
+    <button class="btn btn-info bk-btn" (click)="back()">Back</button>
+    <button *ngIf="isFavorite" class="btn btn-light" (click)="addToFavorite()"><img src="assets/favorite.png" class="img-ico"> Remove from favorite</button>
+    <button *ngIf="!isFavorite" class="btn btn-light" (click)="addToFavorite()"><img src="assets/favorite-empty.png" class="img-ico"> Add to favorite</button>
+
   </div>
 </div>
 
-<div class="row">
+<div class="row clh-box">
   <div class="col-12">
-    <p [innerHTML]="poem?.lines | linestring" class="multi_lines_text"></p>
+    <p [innerHTML]="poem?.lines | linestring" class="multi_lines_text mt-2"></p>
   </div>
 </div>
